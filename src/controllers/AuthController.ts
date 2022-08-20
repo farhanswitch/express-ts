@@ -1,11 +1,18 @@
 import { Request, Response } from "express";
+const db = require("../db/models");
 
 class AuthController {
-  register(req: Request, res: Response): Response {
-    return res.json({ msg: "ok" });
-  }
+  register = async (req: Request, res: Response): Promise<Response> => {
+    const { username, password } = req?.body;
+
+    const createdUser = new db.user({
+      username,
+      password,
+    });
+    return res.json({ createdUser });
+  };
   login(req: Request, res: Response): Response {
-    return res.json({ msg: "ok" });
+    return res.json({ msg: "oklogin" });
   }
 }
 
