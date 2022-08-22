@@ -3,10 +3,10 @@ import jwt from "jsonwebtoken";
 require("dotenv").config();
 
 class Authentication {
-  public static passwordHash = (password: string): string =>
+  public static hashingPassword = (password: string): string =>
     bcrypt.hashSync(password, 10);
 
-  public static passwordCompare = async (
+  public static comparePassword = async (
     password: string,
     hashedPassword: string
   ): Promise<Boolean> => await bcrypt.compare(password, hashedPassword);

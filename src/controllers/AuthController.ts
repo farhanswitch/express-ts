@@ -1,5 +1,4 @@
-import { Request, Response } from "express";
-import { NextFunction } from "express-serve-static-core";
+import { Request, Response, NextFunction } from "express";
 
 import Authentication from "../utils/Authentication";
 const db = require("../db/models");
@@ -9,25 +8,19 @@ class AuthController {
     const { username, password } = req?.body;
 
     const createdUser = await db.user.create({
-      // id: Date.now(),
       username,
-      password: Authentication.passwordHash(password),
-      // createdAt: new Date().toISOString(),
-      // updatedAt: new Date().toDateString(),
+      password: Authentication.hashingPassword(password),
     });
     return res.json({ createdUser });
   };
   login = async (req: Request, res: Response): Promise<Response> => {
-    //find user by username
     const { username, password } = req?.body;
-
     const user = await db.user.findOne({
       where: { username },
     });
 
-    //cek password
     if (user) {
-      const isValidUser = await Authentication.passwordCompare(
+      const isValidUser = await Authentication.comparePassword(
         password,
         user?.password
       );
