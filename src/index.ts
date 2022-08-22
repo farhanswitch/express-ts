@@ -6,6 +6,7 @@ import cors from "cors";
 
 import UserRoutes from "./routers/UserRoutes";
 import AuthRoutes from "./routers/AuthRoutes";
+import TodoRoutes from "./routers/TodoRoutes";
 
 class myServer {
   public app: Application;
@@ -35,10 +36,11 @@ class myServer {
 
     this.app.use("/api/v1/users", UserRoutes);
     this.app.use("/api/v1/auth", AuthRoutes);
+    this.app.use("/api/v1/todos", TodoRoutes);
   }
 }
 
-const port: number = 4001;
+const port: number = 5000;
 const server = new myServer().app;
 server.listen(port, () => {
   console.log(`Backend listening on port ${port}`);

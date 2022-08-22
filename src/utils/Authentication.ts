@@ -22,7 +22,7 @@ class Authentication {
       },
       process.env.JWT_SECRET_KEY || "secret",
       {
-        expiresIn: "10m",
+        expiresIn: "4h",
       }
     );
 }
