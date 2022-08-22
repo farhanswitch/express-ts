@@ -17,7 +17,7 @@ class AuthMiddlewares {
       try {
         const credential: string | object = jwt.verify(token, secretKey);
         if (credential) {
-          req.body = { credential };
+          req.app.locals.credential = credential;
           next();
         } else {
           return res.json({ msg: "Invalid token" });

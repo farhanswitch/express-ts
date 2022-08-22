@@ -19,7 +19,7 @@ class AuthController {
   };
   login = async (req: Request, res: Response): Promise<Response> => {
     //find user by username
-    const { username, password } = req.body;
+    const { username, password } = req?.body;
 
     const user = await db.user.findOne({
       where: { username },
@@ -43,7 +43,7 @@ class AuthController {
   };
 
   profile = (req: Request, res: Response, next: NextFunction): Response => {
-    const { credential } = req?.body;
+    const { credential } = req?.app?.locals;
     if (credential) {
       return res.json({ profile: credential });
     } else {
