@@ -5,6 +5,7 @@ import helmet from "helmet";
 import cors from "cors";
 
 import UserRoutes from "./routers/UserRoutes";
+import AuthRoutes from "./routers/AuthRoutes";
 
 class myServer {
   public app: Application;
@@ -33,10 +34,11 @@ class myServer {
     });
 
     this.app.use("/api/v1/users", UserRoutes);
+    this.app.use("/api/v1/auth", AuthRoutes);
   }
 }
 
-const port: number = 5000;
+const port: number = 4001;
 const server = new myServer().app;
 server.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
