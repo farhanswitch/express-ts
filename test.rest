@@ -32,3 +32,25 @@ Content-Type: application/json
 }
 ###
 DELETE http://localhost:5000/api/v1/users/3
+
+###
+POST http://localhost:4001/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "username": "farhan3",
+    "password": "12345678"
+}
+
+###
+POST http://localhost:4001/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "username": "farhan3",
+    "password": "12345678"
+}
+
+###
+GET http://localhost:4001/api/v1/auth/profile
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywidXNlcm5hbWUiOiJmYXJoYW4zIiwiaWF0IjoxNjYxMTQxMzkzLCJleHAiOjE2NjExNDE5OTN9.9egcvSfrcG6Os41T0U9AeQycl7OgAMBQaq4XYe26lAU
