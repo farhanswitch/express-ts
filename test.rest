@@ -77,10 +77,14 @@ GET http://localhost:5000/api/v1/todos/2
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmYXJoYW4zIiwiaWF0IjoxNjYxMTM3MDk4LCJleHAiOjE2NjExNTE0OTh9.gP86bphpX-cTQ_Nj8f8DsGJg6nu8aUGqWYHsXkZoN3I
 
 ###
-PUT http://localhost:5000/api/v1/todos/2
+PUT http://localhost:5000/api/v1/todos/4
 Content-Type: application/json
 Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmYXJoYW4zIiwiaWF0IjoxNjYxMTM3MDk4LCJleHAiOjE2NjExNTE0OTh9.gP86bphpX-cTQ_Nj8f8DsGJg6nu8aUGqWYHsXkZoN3I
 
 {
-    "description": "todo kedua yang di update lagi"
+    "description": "todo ketiga yang di update"
 }
+
+###
+DELETE http://localhost:5000/api/v1/todos/4
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJmYXJoYW4zIiwiaWF0IjoxNjYxMTM3MDk4LCJleHAiOjE2NjExNTE0OTh9.gP86bphpX-cTQ_Nj8f8DsGJg6nu8aUGqWYHsXkZoN3I

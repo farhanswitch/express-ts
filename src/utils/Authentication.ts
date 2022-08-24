@@ -1,6 +1,6 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-require("dotenv").config();
+// require("dotenv").config();
 
 class Authentication {
   public static hashingPassword = (password: string): string =>

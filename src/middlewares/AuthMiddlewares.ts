@@ -1,6 +1,6 @@
 import { Response, Request, NextFunction } from "express";
 import jwt from "jsonwebtoken";
-require("dotenv").config;
+// require("dotenv").config;
 
 class AuthMiddlewares {
   public static midAuth = (
