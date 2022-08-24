@@ -4,6 +4,7 @@ import compression from "compression";
 import helmet from "helmet";
 import cors from "cors";
 import dotenv from "dotenv";
+require("dotenv").config();
 
 import UserRoutes from "./routers/UserRoutes";
 import AuthRoutes from "./routers/AuthRoutes";
@@ -42,7 +43,7 @@ class myServer {
   }
 }
 
-const port: number = 5000;
+const port: number = parseInt(process.env.NODE_DOCKER_PORT || "3000");
 const server = new myServer().app;
 server.listen(port, () => {
   console.log(`Backend listening on port ${port}`);
